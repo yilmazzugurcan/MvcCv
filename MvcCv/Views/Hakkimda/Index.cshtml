@@ -1,0 +1,61 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblHakkimda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımda Düzenleme Sayfası</h2>
+<br />
+<form method="post">
+    <label>Ad</label>
+    <input type="text" name="Ad" value="@Model[0].Ad" class="form-control" />
+    <br />
+    <label>Soyad</label>
+    <input type="text" name="Soyad" value="@Model[0].Soyad" class="form-control" />
+    <br />
+    <label>Mail</label>
+    <input type="text" name="Mail" value="@Model[0].Mail" class="form-control" />
+    <br />
+    <label>Telefon</label>
+    <input type="text" name="Telefon" value="@Model[0].Telefon" class="form-control" />
+    <br />
+    <label>Adres</label>
+    <input type="text" name="Adres" value="@Model[0].Adres" class="form-control" />
+    <br />
+    <label>Resim</label>
+    <input type="text" name="Resim" value="@Model[0].Resim" class="form-control" />
+    <label>Açıklama</label>
+    <textarea rows="10" class="form-control" name="Aciklama">@Model[0].Aciklama</textarea>
+    <br />
+
+    @for (int i = 1; i < Model.Count; i++)
+    {
+        <label>Ad</label>
+        <input type="text" name="Ad" value="@Model[i].Ad" class="form-control" />
+        <br />
+        <label>Soyad</label>
+        <input type="text" name="Soyad" value="@Model[i].Soyad" class="form-control" />
+        <br />
+        <label>Mail</label>
+        <input type="text" name="Mail" value="@Model[i].Mail" class="form-control" />
+        <br />
+        <label>Telefon</label>
+        <input type="text" name="Telefon" value="@Model[i].Telefon" class="form-control" />
+        <br />
+        <label>Adres</label>
+        <input type="text" name="Adres" value="@Model[i].Adres" class="form-control" />
+        <br />
+        <label>Resim</label>
+        <input type="text" name="Resim" value="@Model[i].Resim" class="form-control" />
+        <label>Açıklama</label>
+        <textarea rows="20" class="form-control" name="Aciklama">@Model[i].Aciklama</textarea>
+        <br />
+    }
+
+    <br />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
+
